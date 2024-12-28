@@ -103,6 +103,8 @@ Example:
 Allows creating a parent route with child routes.
 Useful for layouts where multiple pages share common components (e.g., navigation bar).
 Example:
+
+
 1-Define a Layout Component
 The layout component contains shared elements like a header, sidebar, or footer. It uses <Outlet> to render the child routes.
 
