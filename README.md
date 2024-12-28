@@ -103,6 +103,33 @@ Example:
 Allows creating a parent route with child routes.
 Useful for layouts where multiple pages share common components (e.g., navigation bar).
 Example:
+1-Define a Layout Component
+The layout component contains shared elements like a header, sidebar, or footer. It uses <Outlet> to render the child routes.
+
+```jsx
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
+
+const DashboardLayout = () => {
+  return (
+    <div>
+      <header>
+        <h1>Dashboard</h1>
+        <nav>
+          <Link to="profile">Profile</Link> | <Link to="settings">Settings</Link>
+        </nav>
+      </header>
+      <main>
+        {/* Child routes will be rendered here */}
+        <Outlet />
+      </main>
+    </div>
+  );
+};
+
+export default DashboardLayout;
+```
+2-Use the layout and create nested routes
 ```jsx
 <Route path="/dashboard" element={<DashboardLayout />}>
   <Route path="settings" element={<Settings />} />
